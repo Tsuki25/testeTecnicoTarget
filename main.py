@@ -1,16 +1,31 @@
-# This is a sample Python script.
+def seq_fibonacci(valor):
+    array_fibonacci = [0, 1]
+    while array_fibonacci[-1] < valor:
+        proximo = array_fibonacci[-1] + array_fibonacci[-2]
+        array_fibonacci.append(proximo)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    return array_fibonacci
 
+def verifica_valor_fibonacci(valor):
+    fibonacci = seq_fibonacci(valor)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    if numero in fibonacci:
+        return f"O número {numero} pertence à sequência de Fibonacci."
+    else:
+        return f"O número {numero} não pertence à sequência de Fibonacci."
 
+def verificar_e_contar_Aa(frase):
+    frase = frase.upper()
+    if "A" in frase:
+        return f"A letra a está presente na frase e aparece {frase.count('A')} vezes."
+    else:
+        return f"A letra a não está presente na frase."
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    numero = int(input("Informe um número: "))
+    resultado = verifica_valor_fibonacci(numero)
+    print(resultado)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    frase = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    res = verificar_e_contar_Aa(frase)
+    print(res)
